@@ -1,64 +1,216 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bontà Siciliane</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bontà Siciliane – Street Food</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #fff7ef;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #ffe9d2 0, #fffbf5 45%, #f7f1ea 100%);
+      color: #2c2c2c;
+    }
+
+    .card {
+      width: 95%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+      padding: 28px 22px 26px;
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 32px 32px 30px;
+      }
     }
 
     header {
-      background-color: #c0392b;
-      color: white;
-      padding: 20px;
       text-align: center;
+      margin-bottom: 18px;
+      border-bottom: 1px solid #f1d3bf;
+      padding-bottom: 14px;
+    }
+
+    header h1 {
       font-size: 28px;
-      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b83227;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #7a5b4a;
     }
 
     .hero {
-      background-color: #fce6d7;
-      padding: 50px 20px;
       text-align: center;
-      font-size: 32px;
-      font-weight: bold;
-      color: #96281b;
-      border-bottom: 2px solid #e6b099;
+      margin: 20px 0 18px;
+    }
+
+    .hero-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #8f2a1d;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: #5a463b;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #fff1e2;
+      color: #a8422a;
+      border: 1px solid #f5c3a2;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      margin: 18px 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: 2fr 1.5fr;
+        gap: 18px;
+      }
     }
 
     .section {
-      padding: 25px;
-      margin: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: #fff9f4;
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      border: 1px solid #f4d3b7;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #8d3a24;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .section p,
+    .section li {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #4a3a32;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    .section ul li::before {
+      content: "• ";
+      color: #cc5229;
+      font-weight: bold;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #b23922;
+    }
+
+    .footer-info {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #7f6a5c;
+    }
+
+    .cta {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-btn span {
       font-size: 18px;
-      line-height: 1.6;
+    }
+
+    .note {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #856d5e;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
+  <div class="card">
+    <header>
+      <h1>Bontà Siciliane</h1>
+      <p>Street food siciliano caldo – dolce e salato</p>
+    </header>
 
-<header>
-  Bontà Siciliane – Specialità Tipiche
-</header>
+    <div class="hero">
+      <div class="hero-title">Sapori di Sicilia in giro per il Nord Italia</div>
+      <div class="hero-subtitle">Arancini, cannoli, ciambelle e specialità tipiche nei mercatini ed eventi di piazza.</div>
+      <div class="badge">Banco itinerante • Prodotti tipici siciliani</div>
+    </div>
 
-<div class="hero">
-  Sapori Siciliani Autentici
-</div>
-
-<div class="section">
-  Benvenuti!  
-  <br><br>
-  Qui trovi arancini, cannoli, ciambelle, panzerotti, vino, birra “Minchia” e tante altre specialità siciliane.
-  <br><br>
-  Presenti nei migliori eventi, fiere e mercatini del Nord Italia.
-</div>
-
-</body>
-</html>
+    <div class="grid">
+      <section class="section">
+        <h2>🍽 Cosa trovi</h2>
+        <p>
+          Selezione di specialità siciliane <span class="highlight">pronte da mangiare</span>:
+        </p>
+        <ul>
+          <li>Arancini caldi</li>
+          <li>Cannoli siciliani con ricotta</li>
+          <li>Ciambelle dolci</li>
+          <li>Panzerotti e altre
