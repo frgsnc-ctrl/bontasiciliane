@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bontà Siciliane – Street Food</title>
+  <title>Bontà Siciliane – Siciliana calda</title>
 
   <style>
     * {
@@ -14,203 +14,291 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at top, #ffe9d2 0, #fffbf5 45%, #f7f1ea 100%);
+      background-color: #fff7ef;
       color: #2c2c2c;
     }
 
-    .card {
-      width: 95%;
-      max-width: 900px;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-      padding: 28px 22px 26px;
-    }
-
-    @media (min-width: 768px) {
-      .card {
-        padding: 32px 32px 30px;
-      }
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 18px;
-      border-bottom: 1px solid #f1d3bf;
-      padding-bottom: 14px;
-    }
-
-    header h1 {
-      font-size: 28px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #b83227;
-    }
-
-    header p {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #7a5b4a;
-    }
+    /* HERO CON LA TUA IMMAGINE */
 
     .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      margin: 20px 0 18px;
+      padding: 40px 16px;
+      background-image: url("ChatGPT Image 17 nov 2025, 10_32_35.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.7)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+      color: #ffffff;
     }
 
     .hero-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: #8f2a1d;
-      margin-bottom: 6px;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     .hero-subtitle {
-      font-size: 16px;
-      color: #5a463b;
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .hero-text {
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #f3e0d0;
+    }
+
+    .hero-badge-row {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      font-size: 12px;
     }
 
     .badge {
-      display: inline-block;
-      margin-top: 10px;
       padding: 4px 10px;
       border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-cta {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-whatsapp-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      border: none;
+      background: #25d366;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .btn-whatsapp-hero span {
+      font-size: 18px;
+    }
+
+    .btn-whatsapp-hero:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-note {
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: #fff1e2;
-      color: #a8422a;
-      border: 1px solid #f5c3a2;
+      color: #f0dccc;
+      align-self: center;
     }
 
-    .grid {
-      display: grid;
-      gap: 14px;
-      margin: 18px 0 20px;
-    }
-
-    @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: 2fr 1.5fr;
-        gap: 18px;
-      }
-    }
+    /* SEZIONE SOTTO (TESTO SEMPLICE) */
 
     .section {
-      background: #fff9f4;
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      border: 1px solid #f4d3b7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 26px 16px 40px;
     }
 
-    .section h2 {
-      font-size: 16px;
-      margin-bottom: 8px;
+    .section-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 22px 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      border: 1px solid #f1d2b6;
+    }
+
+    .section-title {
+      font-size: 20px;
       color: #8d3a24;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 700;
+      margin-bottom: 8px;
     }
 
-    .section p,
-    .section li {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #4a3a32;
+    .section-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #4c3a31;
     }
 
-    .section ul {
+    .section-list {
+      margin-top: 12px;
       list-style: none;
       padding-left: 0;
-      margin-top: 4px;
+      font-size: 14px;
+      color: #4c3a31;
     }
 
-    .section ul li::before {
+    .section-list li::before {
       content: "• ";
       color: #cc5229;
       font-weight: bold;
     }
 
-    .highlight {
-      font-weight: 600;
-      color: #b23922;
+    .section-list li {
+      margin-bottom: 4px;
     }
 
-    .footer-info {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #7f6a5c;
+    .section-footer {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #7a6256;
     }
 
-    .cta {
-      margin-top: 10px;
-      text-align: center;
-    }
+    /* WHATSAPP FLOTTANTE IN BASSO A DESTRA */
 
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 999px;
-      border: none;
-      font-size: 15px;
-      font-weight: 600;
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
       background: #25d366;
-      color: #ffffff;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
       cursor: pointer;
+      z-index: 100;
       transition: transform 0.12s ease, box-shadow 0.12s ease;
+      text-decoration: none;
     }
 
-    .whatsapp-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    .whatsapp-float:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
     }
 
-    .whatsapp-btn span {
-      font-size: 18px;
-    }
-
-    .note {
-      margin-top: 6px;
+    .whatsapp-label {
+      position: fixed;
+      right: 86px;
+      bottom: 24px;
+      background: #ffffff;
+      padding: 6px 10px;
+      border-radius: 999px;
       font-size: 11px;
-      color: #856d5e;
-      text-align: center;
+      color: #5a463b;
+      border: 1px solid #edd3b6;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      z-index: 100;
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-label {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <header>
-      <h1>Bontà Siciliane</h1>
-      <p>Street food siciliano caldo – dolce e salato</p>
-    </header>
+  <!-- HERO CON IMMAGINE E TESTI PRINCIPALI -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-title">Bontà Siciliane</div>
+      <div class="hero-subtitle">Siciliana calda – arancini, cannoli, ciambelle</div>
 
-    <div class="hero">
-      <div class="hero-title">Sapori di Sicilia in giro per il Nord Italia</div>
-      <div class="hero-subtitle">Arancini, cannoli, ciambelle e specialità tipiche nei mercatini ed eventi di piazza.</div>
-      <div class="badge">Banco itinerante • Prodotti tipici siciliani</div>
+      <p class="hero-text">
+        Street food siciliano caldo, dolce e salato, portato nei mercatini, nelle fiere di paese
+        e negli eventi di piazza del Nord Italia. Prodotti tipici, sapori autentici, banco
+        itinerante dedicato alla Sicilia.
+      </p>
+
+      <div class="hero-badge-row">
+        <div class="badge">Banco itinerante</div>
+        <div class="badge">Prodotti tipici siciliani</div>
+      </div>
+
+      <div class="hero-cta">
+        <!-- CAMBIA QUI IL NUMERO -->
+        <a
+          class="btn-whatsapp-hero"
+          href="https://wa.me/39XXXXXXXXXX?text=Ciao%2C%20vorrei%20informazioni%20sulle%20Bont%C3%A0%20Siciliane"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>💬</span> Scrivici su WhatsApp
+        </a>
+        <span class="hero-note">Per info, ordini e richieste per eventi.</span>
+      </div>
     </div>
+  </section>
 
-    <div class="grid">
-      <section class="section">
-        <h2>🍽 Cosa trovi</h2>
-        <p>
-          Selezione di specialità siciliane <span class="highlight">pronte da mangiare</span>:
-        </p>
-        <ul>
-          <li>Arancini caldi</li>
-          <li>Cannoli siciliani con ricotta</li>
-          <li>Ciambelle dolci</li>
-          <li>Panzerotti e altre
+  <!-- SEZIONE SOTTO: DESCRIZIONE SEMPLICE -->
+  <section class="section">
+    <div class="section-card">
+      <h2 class="section-title">Cosa trovi al banco</h2>
+      <p class="section-text">
+        Una selezione di specialità siciliane pronte da mangiare, pensate per lo street food
+        e per le serate di festa:
+      </p>
+
+      <ul class="section-list">
+        <li>Arancini caldi</li>
+        <li>Cannoli siciliani con ricotta</li>
+        <li>Ciambelle e dolci tipici</li>
+        <li>Panzerotti e altre proposte salate</li>
+        <li>Vini siciliani e birra “Minchia” dove consentito</li>
+      </ul>
+
+      <p class="section-footer">
+        Siamo presenti in fiere, sagre e mercatini in Veneto, Friuli, Trentino, Lombardia ed Emilia Romagna.
+        Scrivici su WhatsApp per sapere in quale evento saremo presenti.
+      </p>
+    </div>
+  </section>
+
+  <!-- BOTTONE WHATSAPP FISSO IN BASSO A DESTRA -->
+  <!-- USA LO STESSO NUMERO DELL'HERO -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/39XXXXXXXXXX?text=Ciao%2C%20vorrei%20informazioni%20sulle%20Bont%C3%A0%20Siciliane"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Scrivici su WhatsApp"
+  >
+    💬
+  </a>
+  <div class="whatsapp-label">
+    Scrivici su WhatsApp
+  </div>
+</body>
+</html>
